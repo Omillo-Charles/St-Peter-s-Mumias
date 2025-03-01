@@ -1,0 +1,657 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=PT+Sans+Narrow:wght@400;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+body{
+    background-color: lightblue;
+    color: black;
+    box-sizing: border-box;
+    font-family: "PT Sans Narrow", sans-serif;
+    font-size: 1.2rem;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+            "Sidebar Header"
+            "Sidebar Body"
+            "Sidebar Footer"
+    ;
+
+    @media screen and (max-width:768px){
+        display: grid;
+        grid-template-areas:
+            "Header"
+            "Body"
+            "Footer"
+        ;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+}
+
+header{
+    grid-area: Header;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border-bottom: 1.2px solid grey;
+    box-shadow: 4px 0 4px 0 grey;
+
+    @media screen and (max-width:768px){
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: auto;
+        text-align: center;
+    }
+}
+
+div.heading{
+
+    /* to do
+        Replace the display block with a display of none
+    */
+    display: none;
+
+    @media screen  and (max-width:768px){
+        display: block;
+    }
+}
+
+div.heading h1{
+    font-size: 1.6rem;
+    font-weight: 640;
+    text-shadow: 0 0 2px blue;
+    text-align: center;
+}
+
+div.heading h1 span{
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+div.header_links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: auto;
+    text-align: center;
+}
+
+div.header_links ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    list-style-type: none;
+    text-align: center;
+}
+
+div.header_links ul li{
+    margin: 0.8rem;
+    font-size: 1.2rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+div.header_links ul li a{
+    color: maroon;
+    text-decoration: none;
+    transition: 0.12s ease;
+}
+
+div.header_links ul li a:hover{
+    animation-name: bounce;
+    animation-duration: 2.4s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    color: #570101;
+}
+
+div.header_links ul li a:active{
+    text-decoration: underline;
+    color: #570101;
+}
+
+div.header_links button{
+    font-size: 1.88rem;
+    font-weight: 540;
+    cursor: pointer;
+    color: maroon;
+    border: none;
+    margin-left: 1.2rem;
+    transition: 0.4s ease;
+    background-color: transparent;
+}
+
+div.header_links button:hover{
+    color: green;
+}
+
+@keyframes bounce {
+    0%{
+        transform: translateY(0.6rem);
+    }
+
+    100%{
+        transform: translateY(-0.6rem);
+    }
+}
+
+section.body{
+    grid-area: Body;
+    margin: auto;
+}
+
+div.hero_section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 6.4rem;
+    flex-wrap: wrap;
+    background-image: url("images/Screenshot 2025-02-28 132444.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 32px 0 32px navy;
+    padding: 1.6rem;
+
+    @media screen and (max-width:768px){
+        margin-top: 1.6rem;
+    }
+}
+
+div.hero_section img{
+    box-shadow: 16px 0 8px #000080ce;
+}
+
+div.text{
+    margin: 1.6rem;
+}
+
+div.text h1{
+    font-size: 2.4rem;
+    text-shadow: 0 0 2px green;
+    text-align: center;
+    color: white;
+}
+
+div#buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+
+div.buttons button{
+    margin: 0.4rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 1.2rem;
+    font-family:  "PT Sans Narrow", sans-serif;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    text-align: center;
+}
+
+button#disc{
+    background-color: navy;
+    color: white;
+    transition: 0.4s ease;
+}
+
+button#disc:hover{
+    background-color: #000080bb;
+}
+
+button#heri{
+    background-color: maroon;
+    color: white;
+    transition: 0.4s ease;
+}
+
+button#heri:hover{
+    background-color: #800000e1;
+}
+
+button#succ{
+    background-color: #006100;
+    color: white;
+    transition: 0.4s ease;
+}
+
+button#succ:hover{
+    background-color: #006900bb;
+}
+
+div.about{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1.6rem 1.2rem;
+    flex-wrap: wrap;
+}
+
+div.hero_about{
+    margin-top: -2.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    overflow-y: hidden;
+    @media screen and (max-width:768px){
+       /*  flex-direction: column; */
+        display: none;
+    }
+}
+
+div.top_images{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+div.top_images figure#fig-1 img{
+    box-shadow: 0 0 16px navy;
+}
+
+div.top_images figure#fig-2 img{
+    margin-left: -5rem;
+    box-shadow: 0 0 16px green;
+}
+
+div.bottom_image img{
+    margin-left: -2.8rem;
+    box-shadow: 0 0 16px maroon;
+    @media screen and (max-width:768px){
+       margin-left: 0.08rem;
+       margin-top: -1.48rem;
+    }
+
+}
+
+div.about h2{
+    font-size: 2rem;
+    text-shadow: 0 0 2px #800000;
+}
+
+div.about p a{
+    color: green;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+div.about p a:hover{
+    color: maroon;
+}
+
+h2.contact_heading{
+    font-size: 2rem;
+    text-shadow: 0 0 2px #800000;
+    text-align: center;
+    margin-top: 1.6rem;
+}
+
+div.contact_us{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+    @media screen and (max-width:768px){
+        flex-direction: column;
+    }
+}
+
+form{
+    background-color: #add8e6b7;
+    box-shadow: inset 0 0 4px grey;
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    margin: 1.6rem;
+    padding: 1.2rem;
+    border-radius: 16px;
+}
+
+div.name{
+    position: relative;
+}
+
+div.name input{
+    width: 20rem;
+    padding: 0.4rem;
+    border: 1px solid navy;
+    outline: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-family:  "PT Sans Narrow", sans-serif;
+}
+
+div.name input:focus{
+    box-shadow: 0 0 2px navy;
+}
+
+div.name label{
+    position: absolute;
+    left: 6.4px;
+    top: 6.4px;
+    transition: 0.4s ease;
+}
+
+div.name input:focus~label{
+    top: -12.8px;
+    font-size: 0.8rem;
+    background-color: white;
+    padding: 0rem 0.4rem;
+    border-radius: 8px;
+    border: 0.8px solid navy;
+    box-shadow: inset 0 0 1.2px navy;
+}
+
+div.email{
+    position: relative;
+}
+
+div.email input{
+    width: 20rem;
+    padding: 0.4rem;
+    border: 1px solid navy;
+    outline: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-family:  "PT Sans Narrow", sans-serif;
+    margin-top: 1.2rem;
+}
+
+div.email input:focus{
+    box-shadow: 0 0 2px navy;
+}
+
+div.email label{
+    position: absolute;
+    left: 6.4px;
+    top: 24px;
+    transition: 0.4s ease;
+}
+
+div.email input:focus~label{
+    top: 6.4px;
+    font-size: 0.8rem;
+    background-color: white;
+    padding: 0rem 0.4rem;
+    border-radius: 8px;
+    border: 0.8px solid navy;
+    box-shadow: inset 0 0 1.2px navy;
+}
+
+div.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.2rem;
+}
+
+div.button button{
+    padding: 0.4rem 1.2rem;
+    margin: auto;
+    font-family: "PT Sans Narrow", sans-serif;
+    font-size: 1.2rem;
+    border: none;
+    background-color:green;
+    color: white;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+div.button button:hover{
+    background-color: maroon;
+    color: white;
+    transform: scale(1.12);
+}
+
+div.message{
+    position: relative;
+}
+
+div.message textarea{
+    width: 20rem;
+    padding: 0.4rem;
+    border: 1px solid navy;
+    outline: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-family:  "PT Sans Narrow", sans-serif;
+    margin-top: 1.2rem;
+    height: 8rem;
+}
+
+div.message textarea:focus{
+    box-shadow: 0 0 2px navy;
+}
+div.message label{
+    position: absolute;
+    left: 6.4px;
+    top: 24px;
+    transition: 0.4s ease;
+}
+
+div.message textarea:focus~label{
+    top: 6.4px;
+    font-size: 0.8rem;
+    background-color: white;
+    padding: 0rem 0.4rem;
+    border-radius: 8px;
+    border: 0.8px solid navy;
+    box-shadow: inset 0 0 1.2px navy;
+}
+
+div._contacts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+div.contact_info{
+    background-color: #add8e6b7;
+    box-shadow: inset 0 0 4px grey;
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    margin: 1.6rem;
+    padding: 1.2rem;
+    border-radius: 16px;
+}
+
+div.contact_info h3{
+    text-align: center;
+    text-shadow: 0 0 1.2px green;
+}
+
+div.contact_info p i{
+    background-color: maroon;
+    padding: 0.2rem 0.4rem;
+    color: white;
+    border: none;
+    border-radius: 8px;
+}
+
+div.contact_info span{
+    color: green;
+    font-weight: 640;
+}
+
+div.follow{
+    background-color: #add8e6b7;
+    box-shadow: inset 0 0 4px grey;
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    margin: 1.6rem;
+    padding: 1.2rem;
+    border-radius: 16px;
+}
+
+div.follow h3{
+    text-align: center;
+    text-shadow: 0 0 1.2px green;
+}
+
+p.links a{
+    margin: 0.8rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    background-color: maroon;
+    color: white;
+    padding: 0.2rem 0.4rem;
+    border-radius: 50%;
+    box-shadow: 0 0 2px green;
+    transition: 0.4s ease;
+    border: 2px solid whitesmoke;
+}
+
+p.links a:hover{
+    background-color: green;
+    color: white;
+    box-shadow: 0 0 2px maroon;
+    border: 2px solid whitesmoke;
+}
+
+div.iframe{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+div.iframe h2{
+    text-align: center;
+    font-size: 2.4rem;
+    text-shadow: 0 0 2px maroon;
+}
+
+iframe{
+    width: 80%;
+    box-shadow: 0 0 8px green;
+}
+
+iframe:hover{
+    box-shadow: 0 0 12px maroon;
+}
+
+footer{
+ grid-area: Footer;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+ margin-top: 1.6rem;
+ text-shadow: 0 0 1.2px navy;
+}
+
+section.aside{
+    grid-area: Sidebar;
+    margin: 0;
+    left: 0;
+    position: fixed;
+    z-index: 1000;
+    box-shadow: 0 0 2px grey;
+    height: 100vh;
+    top: 0;
+    width: fit-content;
+
+    @media screen and (max-width:768px){
+        left: -400px;
+        display: none;
+    }
+}
+
+section.aside figure{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1.6rem;
+    text-align: center;
+}
+
+section.aside figure img{
+    border: 2px solid whitesmoke;
+    box-shadow: 0 0 16px navy;
+}
+
+section.aside figure figcaption{
+    margin-top: 1.6rem;
+    font-size: 1.6rem;
+    font-weight: 540;
+    color: maroon;
+}
+
+section.aside figure p{
+    font-style: italic;
+    font-size: 1.4rem;
+    margin: 1.2rem;
+}
+
+div.links{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 1.2rem;
+    margin-top: -1.2rem;
+}
+
+div.links ul{
+    list-style-type: none;
+}
+
+div.links ul li{
+    margin: 0.8rem;
+}
+
+div.links ul li i{
+    margin-right: 0.4rem;
+    color: green;
+}
+
+div.links ul li a{
+    color: maroon;
+    text-decoration: none;
+    transition: 0.4s ease;
+}
+
+div.links ul li a:hover{
+    text-decoration: underline;
+    color:green;
+    transform: scale(1.12);
+}
+
+hr{
+    color: white;
+    box-shadow: 0 0 2px grey;
+    width: 88%;
+}
+
+
+
+
+
+
+
+
+
+
